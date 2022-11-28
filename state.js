@@ -8,13 +8,16 @@ class State {
         this.x = posX;
         this.y = posY;
         this.stateName = stateName;
+        this.transitions = [];
     }
 
     draw(){
+        for (var i = 0; i < this.transitions.length; i++){
+            this.transitions[i].draw();
+        }
         stroke(0);
         strokeWeight(2);
         fill(255);
-        console.log(this.x)
         circle(this.x, this.y, State.radius);
         fill(150);
         noStroke();
