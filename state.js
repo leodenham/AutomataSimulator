@@ -12,9 +12,6 @@ class State {
     }
 
     draw(){
-        for (var i = 0; i < this.transitions.length; i++){
-            this.transitions[i].draw();
-        }
         stroke(0);
         strokeWeight(2);
         fill(255);
@@ -25,7 +22,12 @@ class State {
         textSize(32);
         text(this.stateName, this.x, this.y);
 
+    }
 
+    drawTransitions(){
+        for (var i = 0; i < this.transitions.length; i++){
+            this.transitions[i].draw();
+        }
     }
 
 
